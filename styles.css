@@ -1,0 +1,2136 @@
+:root {
+    --primary-color: #1a237e;
+    --secondary-color: #3949ab;
+    --text-color: #333;
+    --background-color: #f5f5f5;
+    --accent-color: #c5cae9;
+    --header-height: 60px;
+    --menu-timing: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding-top: var(--header-height);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+nav {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    position: relative;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+}
+
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main-nav {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 100;
+}
+
+.main-nav ul {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.main-nav a:hover {
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+}
+
+.main-nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.header-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform var(--menu-timing) ease;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem;
+    color: white;
+}
+
+.header-top h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-family: 'Noto Serif JP', serif;
+    text-align: center;
+    flex-grow: 1;
+    color: white;
+}
+
+.header-top .date,
+.header-top .issue {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    white-space: nowrap;
+    min-width: 120px;
+}
+
+.header-top .date {
+    text-align: left;
+}
+
+.header-top .issue {
+    text-align: right;
+}
+
+.date {
+    font-size: 1rem;
+}
+
+.header-content h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: center;
+}
+
+.issue {
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 1rem 0;
+    font-weight: 700;
+}
+
+.date, .issue {
+    font-size: 1.2rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero {
+    margin-bottom: 3rem;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-details {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.event-info {
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    margin-bottom: 1.5rem;
+}
+
+.schedule {
+    background-color: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.time-slot {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.time {
+    min-width: 120px;
+    font-weight: bold;
+}
+
+.venue-info {
+    margin-bottom: 2rem;
+}
+
+.map-container {
+    margin-top: 1.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.venue-map {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.speaker-info {
+    background-color: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.speaker-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.speaker-title {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.notice {
+    color: #d32f2f;
+    font-weight: bold;
+    padding: 1rem;
+    border: 2px solid #d32f2f;
+    border-radius: 4px;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 3rem;
+}
+
+/* President's Message Page Styles */
+.message-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.president-message {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.president-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.president-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.president-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.president-title {
+    text-align: left;
+}
+
+.president-title .title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.president-title .name {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.message-content {
+    font-family: 'Noto Serif JP', serif;
+    line-height: 2;
+}
+
+.message-content p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.poem {
+    font-family: 'Noto Serif JP', serif;
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+/* Anniversary Page Styles */
+.anniversary-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.anniversary-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.ceremony-schedule {
+    margin-bottom: 3rem;
+}
+
+.date-info {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+.timeline {
+    margin: 2rem 0;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.timeline-item .time {
+    min-width: 120px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.timeline-item .event {
+    flex-grow: 1;
+}
+
+.timeline-item h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.timeline-item ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.timeline-item li {
+    margin-bottom: 0.5rem;
+}
+
+.lecture-title {
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.lecturer {
+    color: #666;
+}
+
+.ceremony-photos {
+    margin-top: 3rem;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.photo-grid figure {
+    margin: 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ceremony-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.photo-grid figcaption {
+    padding: 1rem;
+    text-align: center;
+    color: #666;
+}
+
+.mascot-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.mascot-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.mascot-image {
+    flex: 0 0 300px;
+}
+
+.mascot {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.mascot-info {
+    flex-grow: 1;
+}
+
+.creator {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.description {
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+    }
+
+    .timeline-item .time {
+        margin-bottom: 0.5rem;
+    }
+
+    .mascot-content {
+        flex-direction: column;
+    }
+
+    .mascot-image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+/* SDGs Book Section */
+.sdgs-book {
+    margin-top: 4rem;
+}
+
+.sdgs-content {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.sdgs-main-image {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sdgs-character {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.sdgs-pages {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sdgs-preview {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* SDGs Karuta Section */
+.sdgs-karuta {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--accent-color);
+}
+
+.karuta-description {
+    margin: 2rem 0;
+    line-height: 1.8;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.karuta-gallery {
+    margin-top: 2rem;
+}
+
+.karuta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.karuta-set {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.karuta-set.set3 {
+    margin-bottom: 2rem;
+}
+
+.karuta-qr {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.qr-caption {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.karuta-set h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.karuta-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+/* Clear File Section */
+.clear-file {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--accent-color);
+}
+
+.clear-file-description {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.clear-file-description p {
+    margin-bottom: 1rem;
+}
+
+.clear-file-description p:last-child {
+    margin-bottom: 0;
+}
+
+.clear-file-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.clear-file-front,
+.clear-file-back {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.clear-file-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.clear-file-front figcaption,
+.clear-file-back figcaption {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .clear-file-images {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* 部活動紹介ページ */
+.club-activities {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.club-activities h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.club-section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.club-section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.club-content {
+    line-height: 1.8;
+}
+
+.club-content p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.club-photos {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.club-photo {
+    max-width: 600px;
+    margin: 0;
+}
+
+.club-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.club-photo figcaption {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .club-activities {
+        padding: 1rem;
+    }
+
+    .club-section {
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .club-photos {
+        gap: 1rem;
+    }
+}
+
+/* Student Info Page */
+.student-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.info-section {
+    margin-bottom: 4rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.info-section h3 {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Student Council Section */
+.council-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.council-photo {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.council-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.photo-caption {
+    margin-top: 0.8rem;
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.council-text {
+    line-height: 1.8;
+}
+
+.president-sign {
+    text-align: right;
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+
+/* Career Path Section */
+.chart-section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 1200px;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* デスクトップではより大きく表示 */
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* グラフの凡例 */
+.chart-legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+/* グラフのタイトルとラベル */
+.chart-container h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1024px) {
+    .chart-container {
+        height: 400px;
+        padding: 1.2rem;
+    }
+
+    .chart-container h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-section {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .chart-container {
+        height: 350px;
+        padding: 1rem;
+    }
+
+    .chart-legend {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        padding: 1rem;
+    }
+
+    .legend-item {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-container {
+        height: 300px;
+        padding: 0.8rem;
+    }
+
+    .chart-legend {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+
+    .chart-container h3 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* モバイルファースト対応の基本設定 */
+.header-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform var(--menu-timing) ease;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem;
+    color: white;
+}
+
+/* ハンバーガーメニュー */
+.menu-toggle {
+    position: fixed;
+    top: 0.8rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
+}
+
+.bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 5px auto;
+    background: white;
+    transition: all var(--menu-timing) ease;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* メインナビゲーション */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--primary-color);
+    transform: translateX(-100%);
+    transition: transform var(--menu-timing) cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    padding-top: calc(var(--header-height) + 1rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.main-nav.active {
+    transform: translateX(0);
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+}
+
+.main-nav li {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all var(--menu-timing) ease;
+    transition-delay: calc(var(--menu-timing) * 0.1 * var(--i));
+}
+
+.main-nav.active li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.main-nav a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all var(--menu-timing) ease;
+}
+
+.main-nav a:active {
+    background: var(--secondary-color);
+    transform: scale(0.98);
+}
+
+.main-nav a.active {
+    background: var(--secondary-color);
+    font-weight: 500;
+}
+
+/* メインコンテンツの調整 */
+body {
+    padding-top: var(--header-height);
+    background: var(--background-color);
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+/* アニメーション用のユーティリティクラス */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* スマートフォン固有の調整 */
+@media (max-width: 480px) {
+    .header-top {
+        justify-content: center;
+        text-align: center;
+        padding: 0 3rem;
+    }
+
+    .header-top h1 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .date, .issue {
+        display: none;
+    }
+
+    .main-nav a {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .menu-toggle {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .bar {
+        width: 20px;
+    }
+}
+
+/* タッチデバイスの操作性向上 */
+@media (hover: none) {
+    .main-nav a {
+        padding: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .main-nav a:active {
+        background: var(--secondary-color);
+    }
+}
+
+/* セーフエリア対応 */
+@supports (padding: env(safe-area-inset-top)) {
+    .header-content {
+        padding-top: env(safe-area-inset-top);
+        height: calc(var(--header-height) + env(safe-area-inset-top));
+    }
+
+    body {
+        padding-top: calc(var(--header-height) + env(safe-area-inset-top));
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* 生徒ホール特別スタイル */
+.hall-special {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f2ff 100%);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+.hall-content {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hall-image {
+    flex: 0 0 60%;
+    position: relative;
+}
+
+.hall-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.image-caption {
+    flex: 0 0 35%;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.image-caption::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+}
+
+.image-caption p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+/* タブレット向けのスタイル */
+@media (max-width: 1024px) {
+    .hall-special {
+        padding: 2rem;
+        margin: 1.5rem;
+    }
+
+    .hall-content {
+        gap: 2rem;
+    }
+
+    .image-caption {
+        padding: 1.25rem;
+    }
+
+    .image-caption p {
+        font-size: 1rem;
+    }
+}
+
+/* スマートフォン向けのスタイル */
+@media (max-width: 768px) {
+    .hall-special {
+        padding: 1.5rem;
+        margin: 1rem;
+        border-radius: 10px;
+    }
+
+    .hall-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .hall-image, .image-caption {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .hall-image img {
+        border-radius: 8px;
+    }
+
+    .image-caption {
+        padding: 1rem;
+    }
+
+    .image-caption::before {
+        left: 50%;
+        top: -10px;
+        transform: translateX(-50%);
+        border-color: transparent transparent white transparent;
+    }
+}
+
+/* 小さいスマートフォン向けのスタイル */
+@media (max-width: 480px) {
+    .hall-special {
+        padding: 1rem;
+        margin: 0.75rem;
+    }
+
+    .hall-content {
+        gap: 1rem;
+    }
+
+    .image-caption p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Shokei News スタイル */
+.shokei-news {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.news-date {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.news-title {
+    font-size: 3.5rem;
+    margin: 1rem 0;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.news-issue {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.news-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+    .news-header {
+        padding: 2rem 1rem;
+        border-radius: 12px;
+    }
+
+    .news-date {
+        font-size: 1.2rem;
+    }
+
+    .news-title {
+        font-size: 2.5rem;
+    }
+
+    .news-issue {
+        font-size: 1.4rem;
+    }
+
+    .news-content {
+        padding: 1.5rem;
+    }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .leaders-content,
+    .activities-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .leader-card,
+    .activity-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* さらに小さい画面用の調整 */
+@media (max-width: 480px) {
+    .building-image {
+        margin-bottom: 30px;
+    }
+
+    .image-caption {
+        margin: 0 15px;
+        max-width: calc(100% - 30px);
+        padding: 1.2rem;
+    }
+}
+
+/* Student Info Page のレスポンシブ対応 */
+@media (max-width: 768px) {
+    .student-info {
+        padding: 1rem;
+    }
+
+    .info-section {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
+
+    .info-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .info-section h3 {
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0.8rem;
+    }
+
+    /* 生徒会セクションのレスポンシブ対応 */
+    .council-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .council-photo {
+        padding: 0.8rem;
+    }
+
+    .council-text {
+        font-size: 0.95rem;
+    }
+
+    /* 進路情報セクションのレスポンシブ対応改善 */
+    .chart-container {
+        padding: 1.5rem;
+        margin: 1rem -1rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* グラフのタイトル */
+    .chart-container h3 {
+        font-size: 1.1rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    /* グラフの凡例 */
+    .chart-container canvas {
+        margin-bottom: 1rem;
+    }
+
+    /* 凡例のスタイル */
+    .chart-legend {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.8rem;
+        padding: 1rem;
+        background: #f8fafc;
+        border-radius: 8px;
+        margin-top: 1.5rem;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--text-color);
+    }
+
+    .legend-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+    }
+}
+
+/* さらに小さい画面用の調整 */
+@media (max-width: 480px) {
+    .student-info {
+        padding: 0.8rem;
+    }
+
+    .info-section {
+        padding: 1.2rem;
+    }
+
+    .info-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .council-photo {
+        padding: 0.5rem;
+    }
+
+    .photo-caption {
+        font-size: 0.85rem;
+    }
+
+    .chart-container {
+        padding: 0.8rem;
+    }
+
+    .chart-container h3 {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .chart-legend {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+        padding: 0.8rem;
+        margin-top: 1.2rem;
+    }
+
+    .legend-item {
+        font-size: 0.85rem;
+    }
+}
+
+/* モバイル向けのコンテンツ幅調整 */
+@media (max-width: 768px) {
+    /* 共通のコンテナスタイル */
+    .container {
+        width: 100%;
+        padding: 0 1rem;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+
+    /* メインコンテンツの調整 */
+    main {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* 各セクションの横幅調整 */
+    .message-page,
+    .principal-message,
+    .anniversary-section,
+    .club-section,
+    .current-section {
+        width: 100%;
+        padding: 1rem;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    /* テキストコンテンツの調整 */
+    p {
+        width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* 画像の最適化 */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 進路状況テーブル以外のテーブル調整 */
+    table:not(.career-table):not(.univ-table) {
+        width: 100%;
+        display: block;
+    }
+
+    /* グリッドレイアウトの調整 */
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    /* フレックスボックスの調整 */
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* カード型レイアウトの調整 */
+    .card {
+        width: 100%;
+        margin: 0 0 1rem 0;
+    }
+
+    /* 見出しのスタイル調整 */
+    h1, h2, h3, h4, h5, h6 {
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    /* 会長・校長メッセージページの調整 */
+    .message-content {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .president-info,
+    .principal-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .president-image,
+    .principal-image {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 1rem;
+    }
+
+    /* 部活動紹介ページの調整 */
+    .club-photos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .club-photo {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* 創立120周年記念事業ページの調整 */
+    .anniversary-content {
+        width: 100%;
+        padding: 0;
+    }
+
+    .event-details {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    /* 土浦二高のいまページの調整 */
+    .current-content {
+        width: 100%;
+        padding: 0;
+    }
+
+    .news-section {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    /* 進路状況テーブルのスクロール維持 */
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .career-table,
+    .univ-table {
+        min-width: 800px;
+    }
+}
+
+/* さらに小さい画面用の調整 */
+@media (max-width: 480px) {
+    /* パディングとマージンの微調整 */
+    .container {
+        padding: 0 0.8rem;
+    }
+
+    /* フォントサイズの調整 */
+    body {
+        font-size: 0.95rem;
+    }
+
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.3rem; }
+    h4 { font-size: 1.1rem; }
+
+    /* 画像サイズの調整 */
+    .president-image,
+    .principal-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* カード型レイアウトの余白調整 */
+    .card {
+        padding: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+}
+
+/* 創立120周年事業ページのスタイル調整 */
+.anniversary-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.anniversary-content {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.event-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-content {
+    padding: 1.5rem;
+}
+
+.event-title {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.event-description {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.event-details {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.event-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-block {
+    background: white;
+    padding: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.info-block h4 {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-block h4::before {
+    content: '';
+    width: 4px;
+    height: 1em;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent-color);
+    border-radius: 1px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: var(--primary-color);
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.timeline-time {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1024px) {
+    .anniversary-section {
+        padding: 1.5rem;
+    }
+
+    .event-info-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .anniversary-section {
+        padding: 1rem;
+    }
+
+    .anniversary-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .event-card {
+        max-width: 100%;
+    }
+
+    .event-title {
+        font-size: 1.2rem;
+    }
+
+    .event-image {
+        height: 180px;
+    }
+
+    .info-block {
+        padding: 1rem;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .anniversary-section {
+        padding: 0.8rem;
+    }
+
+    .event-content {
+        padding: 1.2rem;
+    }
+
+    .event-image {
+        height: 160px;
+    }
+
+    .event-title {
+        font-size: 1.1rem;
+    }
+
+    .info-block h4 {
+        font-size: 1rem;
+    }
+
+    .timeline {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-item::before {
+        left: -1.5rem;
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-caption {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* タッチデバイス対応 */
+@media (hover: none) {
+    .event-card {
+        transform: none !important;
+    }
+
+    .gallery-item {
+        cursor: pointer;
+    }
+
+    .gallery-caption {
+        padding: 0.8rem;
+    }
+}
+
+/* セーフエリア対応 */
+@supports (padding: env(safe-area-inset-left)) {
+    .anniversary-section {
+        padding-left: calc(1rem + env(safe-area-inset-left));
+        padding-right: calc(1rem + env(safe-area-inset-right));
+    }
+}
+
+/* モバイルファースト設計による進路状況テーブル */
+.statistics-section {
+    margin: 2.5rem auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+    max-width: 1200px;
+}
+
+.statistics-section h3 {
+    color: white;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+    letter-spacing: 0.05em;
+}
+
+/* テーブルコンテナ */
+.table-container {
+    position: relative;
+    overflow-x: auto;
+    background: white;
+    border-radius: 16px;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* テーブル本体の最適化 */
+.statistics-table {
+    width: 100%;
+    border-collapse: collapse; /* 罫線を重ねて表示 */
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ヘッダー行のデザイン */
+.statistics-table thead tr {
+    background: linear-gradient(to right, #1e3a8a, #2563eb);
+}
+
+/* ヘッダーセル */
+.statistics-table th {
+    color: white;
+    font-weight: 600;
+    padding: 1rem; /* パディングを均一に */
+    text-align: center;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    font-size: 1rem;
+}
+
+/* 各列の色分け */
+.statistics-table th.year-header {
+    background: #1e3a8a;
+    border-top-left-radius: 12px;
+}
+
+.statistics-table th.national-header {
+    background: #1e40af;
+}
+
+.statistics-table th.private-header {
+    background: #047857;
+}
+
+.statistics-table th.total-header {
+    background: #6d28d9;
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.statistics-table th.others-header {
+    background: #475569;
+}
+
+/* データセル */
+.statistics-table td {
+    padding: 1rem; /* パディングを均一に */
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0; /* 各行の下に罫線を追加 */
+    border-right: 1px solid #e2e8f0; /* 各列の右に罫線を追加 */
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+/* 最後の列の右側の罫線を削除 */
+.statistics-table td:last-child {
+    border-right: none;
+}
+
+/* 年度セル */
+.statistics-table .year-cell {
+    background: #f8fafc;
+    font-weight: 600;
+    color: #1e40af;
+    text-align: left;
+    padding-left: 1.5rem;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+
+/* 数値セルのスタイル */
+.statistics-table .national {
+    color: #1e40af;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.statistics-table .private {
+    color: #047857;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.statistics-table .total {
+    color: #6d28d9;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    border-left: 2px solid #e2e8f0;
+    border-right: 2px solid #e2e8f0;
+    background: #faf5ff;
+}
+
+/* 過年度卒の数字 */
+.statistics-table .sub-number {
+    color: #64748b;
+    font-size: 0.9em;
+    margin-left: 4px;
+}
+
+/* 偶数行の背景 */
+.statistics-table tr:nth-child(even) td {
+    background: #f8fafc;
+}
+
+.statistics-table tr:nth-child(even) .year-cell {
+    background: #f1f5f9;
+}
+
+/* ホバー効果 */
+.statistics-table tr:hover td {
+    background: #f1f5f9;
+}
+
+.statistics-table tr:hover .year-cell {
+    background: #e2e8f0;
+}
+
+/* 最終行の強調 */
+.statistics-table tr:last-child td {
+    border-bottom: 2px solid #e2e8f0;
+    font-weight: 600;
+}
+
+/* 注釈 */
+.table-note {
+    margin-top: 1.5rem;
+    color: #64748b;
+    font-size: 0.95rem;
+    text-align: right;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+}
+
