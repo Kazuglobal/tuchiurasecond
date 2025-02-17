@@ -121,7 +121,7 @@ nav a.active {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    padding: 0 1rem;
+    padding: 0 4rem;
     color: white;
 }
 
@@ -182,14 +182,19 @@ main {
 }
 
 .hero {
-    margin-bottom: 3rem;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    overflow: hidden;
 }
 
 .main-image {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .event-details {
@@ -450,12 +455,14 @@ footer {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 4/3;
 }
 
 .ceremony-photo {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
+    object-position: center;
 }
 
 .photo-grid figcaption {
@@ -518,6 +525,30 @@ footer {
     .mascot-image {
         flex: 0 0 auto;
         width: 100%;
+    }
+
+    .ceremony-photo,
+    .council-photo img,
+    .hall-image img,
+    .sdgs-character,
+    .sdgs-preview,
+    .karuta-image,
+    .clear-file-image,
+    .main-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ceremony-photo,
+    .council-photo img,
+    .hall-image img,
+    .sdgs-character,
+    .sdgs-preview,
+    .karuta-image,
+    .clear-file-image,
+    .main-image {
+        height: 200px;
     }
 }
 
@@ -781,22 +812,23 @@ footer {
 .student-info {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0;
 }
 
 .info-section {
-    margin-bottom: 4rem;
+    margin: 0 0 1rem 0;
     background: white;
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .info-section h2 {
-    color: var(--primary-color);
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    text-align: center;
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    margin: -2rem -2rem 2rem -2rem;
+    border: none;
 }
 
 .info-section h3 {
@@ -810,22 +842,20 @@ footer {
 /* Student Council Section */
 .council-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: start;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 0;
 }
 
 .council-photo {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    border-radius: 0;
 }
 
 .council-photo img {
+    border-radius: 0;
     width: 100%;
     height: auto;
-    border-radius: 4px;
 }
 
 .photo-caption {
@@ -847,46 +877,55 @@ footer {
 
 /* Career Path Section */
 .chart-section {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin: 2rem auto;
+    margin: 0;
     padding: 2rem;
-    max-width: 1200px;
+}
+
+.chart-section h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
 }
 
 .chart-container {
     position: relative;
-    width: 100%;
-    height: 500px; /* デスクトップではより大きく表示 */
-    margin-bottom: 2rem;
-    padding: 1.5rem;
     background: white;
-    border-radius: 8px;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .chart-container canvas {
-    width: 100% !important;
-    height: 100% !important;
+    max-height: 400px;
+    margin-bottom: 1.5rem;
 }
 
-/* グラフの凡例 */
+/* グラフの凡例スタイル改善 */
 .chart-legend {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1rem;
     padding: 1.5rem;
-    margin-top: 1.5rem;
     background: #f8fafc;
     border-radius: 8px;
+    margin-top: 1.5rem;
 }
 
 .legend-item {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    font-size: 1rem;
     padding: 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.legend-item:hover {
+    background-color: #f0f4ff;
 }
 
 .legend-color {
@@ -896,62 +935,69 @@ footer {
     flex-shrink: 0;
 }
 
-/* グラフのタイトルとラベル */
-.chart-container h3 {
-    font-size: 1.4rem;
-    color: var(--primary-color);
+.legend-text {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* グラフのグリッドレイアウト */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
     margin-bottom: 2rem;
+}
+
+.chart-title {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
     text-align: center;
+    font-weight: 600;
 }
 
 /* レスポンシブ対応 */
 @media (max-width: 1024px) {
-    .chart-container {
-        height: 400px;
-        padding: 1.2rem;
+    .charts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
-    .chart-container h3 {
-        font-size: 1.2rem;
+    .chart-container {
+        padding: 1rem;
+    }
+
+    .chart-container canvas {
+        max-height: 350px;
     }
 }
 
 @media (max-width: 768px) {
     .chart-section {
-        margin: 1rem;
         padding: 1rem;
+        margin: 1rem;
     }
 
-    .chart-container {
-        height: 350px;
-        padding: 1rem;
+    .chart-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .chart-container canvas {
+        max-height: 300px;
     }
 
     .chart-legend {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
-        padding: 1rem;
+        padding: 0.8rem;
+        margin: 0.5rem 0;
     }
 
     .legend-item {
+        padding: 0.3rem;
+    }
+
+    .legend-text {
         font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .chart-container {
-        height: 300px;
-        padding: 0.8rem;
-    }
-
-    .chart-legend {
-        grid-template-columns: 1fr;
-        gap: 0.6rem;
-    }
-
-    .chart-container h3 {
-        font-size: 1rem;
-        margin-bottom: 1rem;
     }
 }
 
@@ -973,7 +1019,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    padding: 0 1rem;
+    padding: 0 4rem;
     color: white;
 }
 
@@ -981,7 +1027,7 @@ footer {
 .menu-toggle {
     position: fixed;
     top: 0.8rem;
-    right: 1rem;
+    left: 1rem;
     width: 44px;
     height: 44px;
     background: transparent;
@@ -1104,20 +1150,19 @@ body.menu-open {
 }
 
 /* スマートフォン固有の調整 */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .header-top {
-        justify-content: center;
-        text-align: center;
-        padding: 0 3rem;
+        padding: 0 3.5rem;
     }
 
     .header-top h1 {
-        font-size: 1.5rem;
-        margin: 0;
+        font-size: 2rem;
     }
 
-    .date, .issue {
-        display: none;
+    .header-top .date,
+    .header-top .issue {
+        font-size: 1rem;
+        min-width: 100px;
     }
 
     .main-nav a {
@@ -1127,13 +1172,32 @@ body.menu-open {
 
     .menu-toggle {
         top: 0.5rem;
-        right: 0.5rem;
-        width: 40px;
-        height: 40px;
+        left: 0.5rem;
     }
 
     .bar {
         width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-top {
+        padding: 0 3rem;
+    }
+
+    .header-top h1 {
+        font-size: 1.5rem;
+    }
+
+    .menu-toggle {
+        top: 0.5rem;
+        left: 0.5rem;
+    }
+
+    .header-top .date,
+    .header-top .issue {
+        font-size: 0.9rem;
+        min-width: 80px;
     }
 }
 
@@ -1169,6 +1233,8 @@ body.menu-open {
     padding: 2.5rem;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     margin: 2rem 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hall-content {
@@ -1218,37 +1284,18 @@ body.menu-open {
     color: #2c3e50;
 }
 
-/* タブレット向けのスタイル */
-@media (max-width: 1024px) {
-    .hall-special {
-        padding: 2rem;
-        margin: 1.5rem;
-    }
-
-    .hall-content {
-        gap: 2rem;
-    }
-
-    .image-caption {
-        padding: 1.25rem;
-    }
-
-    .image-caption p {
-        font-size: 1rem;
-    }
-}
-
 /* スマートフォン向けのスタイル */
 @media (max-width: 768px) {
     .hall-special {
-        padding: 1.5rem;
-        margin: 1rem;
-        border-radius: 10px;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
     }
 
     .hall-content {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 0.5rem;
     }
     
     .hall-image, .image-caption {
@@ -1257,40 +1304,55 @@ body.menu-open {
     }
 
     .hall-image img {
-        border-radius: 8px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .image-caption {
+        padding: 1rem;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .image-caption::before {
+        display: none;
+    }
+
+    main {
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hall-special {
+        padding: 0;
+    }
+
+    .hall-content {
+        gap: 0.5rem;
     }
 
     .image-caption {
         padding: 1rem;
     }
 
-    .image-caption::before {
-        left: 50%;
-        top: -10px;
-        transform: translateX(-50%);
-        border-color: transparent transparent white transparent;
-    }
-}
-
-/* 小さいスマートフォン向けのスタイル */
-@media (max-width: 480px) {
-    .hall-special {
-        padding: 1rem;
-        margin: 0.75rem;
-    }
-
-    .hall-content {
-        gap: 1rem;
-    }
-
     .image-caption p {
         font-size: 0.95rem;
         line-height: 1.5;
+        padding: 0 1rem;
     }
 
     h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
+        padding: 0 1rem;
     }
 }
 
@@ -1391,574 +1453,131 @@ body.menu-open {
 /* Student Info Page のレスポンシブ対応 */
 @media (max-width: 768px) {
     .student-info {
-        padding: 1rem;
+        padding: 0;
     }
 
     .info-section {
-        margin-bottom: 2rem;
-        padding: 1.5rem;
-        border-radius: 8px;
-    }
-
-    .info-section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .info-section h3 {
-        font-size: 1.2rem;
-        margin: 1.5rem 0 0.8rem;
-    }
-
-    /* 生徒会セクションのレスポンシブ対応 */
-    .council-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .council-photo {
-        padding: 0.8rem;
-    }
-
-    .council-text {
-        font-size: 0.95rem;
-    }
-
-    /* 進路情報セクションのレスポンシブ対応改善 */
-    .chart-container {
-        padding: 1.5rem;
-        margin: 1rem -1rem;
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    /* グラフのタイトル */
-    .chart-container h3 {
-        font-size: 1.1rem;
-        color: var(--primary-color);
-        margin-bottom: 1.5rem;
-        text-align: center;
-        font-weight: 600;
-    }
-
-    /* グラフの凡例 */
-    .chart-container canvas {
-        margin-bottom: 1rem;
-    }
-
-    /* 凡例のスタイル */
-    .chart-legend {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 0.8rem;
         padding: 1rem;
-        background: #f8fafc;
-        border-radius: 8px;
-        margin-top: 1.5rem;
-    }
-
-    .legend-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.9rem;
-        color: var(--text-color);
-    }
-
-    .legend-color {
-        width: 12px;
-        height: 12px;
-        border-radius: 3px;
-    }
-}
-
-/* さらに小さい画面用の調整 */
-@media (max-width: 480px) {
-    .student-info {
-        padding: 0.8rem;
-    }
-
-    .info-section {
-        padding: 1.2rem;
-    }
-
-    .info-section h2 {
-        font-size: 1.3rem;
-    }
-
-    .council-photo {
-        padding: 0.5rem;
-    }
-
-    .photo-caption {
-        font-size: 0.85rem;
-    }
-
-    .chart-container {
-        padding: 0.8rem;
-    }
-
-    .chart-container h3 {
-        font-size: 1rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .chart-legend {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.6rem;
-        padding: 0.8rem;
-        margin-top: 1.2rem;
-    }
-
-    .legend-item {
-        font-size: 0.85rem;
-    }
-}
-
-/* モバイル向けのコンテンツ幅調整 */
-@media (max-width: 768px) {
-    /* 共通のコンテナスタイル */
-    .container {
-        width: 100%;
-        padding: 0 1rem;
-        margin: 0 auto;
-        overflow-x: hidden;
-    }
-
-    /* メインコンテンツの調整 */
-    main {
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    /* 各セクションの横幅調整 */
-    .message-page,
-    .principal-message,
-    .anniversary-section,
-    .club-section,
-    .current-section {
-        width: 100%;
-        padding: 1rem;
-        margin: 0;
-        overflow-x: hidden;
-    }
-
-    /* テキストコンテンツの調整 */
-    p {
-        width: 100%;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
-
-    /* 画像の最適化 */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* 進路状況テーブル以外のテーブル調整 */
-    table:not(.career-table):not(.univ-table) {
-        width: 100%;
-        display: block;
-    }
-
-    /* グリッドレイアウトの調整 */
-    .grid-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        width: 100%;
-    }
-
-    /* フレックスボックスの調整 */
-    .flex-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    /* カード型レイアウトの調整 */
-    .card {
-        width: 100%;
         margin: 0 0 1rem 0;
     }
 
-    /* 見出しのスタイル調整 */
-    h1, h2, h3, h4, h5, h6 {
-        width: 100%;
-        word-wrap: break-word;
+    .info-section h2 {
+        margin: -1rem -1rem 1rem -1rem;
+        padding: 0.8rem;
+        font-size: 1.4rem;
     }
 
-    /* 会長・校長メッセージページの調整 */
-    .message-content {
-        width: 100%;
+    .council-content {
+        gap: 1rem;
+    }
+
+    .chart-section,
+    .table-section {
         padding: 1rem;
     }
 
-    .president-info,
-    .principal-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 1.5rem;
+    .chart-container {
+        padding: 0.5rem;
     }
 
-    .president-image,
-    .principal-image {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto 1rem;
+    .chart-legend {
+        padding: 0.8rem;
+        margin: 0.5rem 0;
     }
 
-    /* 部活動紹介ページの調整 */
-    .club-photos {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .university-tables {
         gap: 1rem;
-        width: 100%;
     }
 
-    .club-photo {
-        width: 100%;
+    .national-univ,
+    .private-univ {
+        padding: 0.5rem;
+    }
+
+    .table-container {
         margin: 0;
     }
 
-    /* 創立120周年記念事業ページの調整 */
-    .anniversary-content {
-        width: 100%;
-        padding: 0;
-    }
-
-    .event-details {
-        width: 100%;
-        margin: 1rem 0;
-    }
-
-    /* 土浦二高のいまページの調整 */
-    .current-content {
-        width: 100%;
-        padding: 0;
-    }
-
-    .news-section {
-        width: 100%;
-        margin: 1rem 0;
-    }
-
-    /* 進路状況テーブルのスクロール維持 */
-    .table-container {
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .career-table,
-    .univ-table {
-        min-width: 800px;
+    .career-table th,
+    .career-table td,
+    .univ-table th,
+    .univ-table td {
+        padding: 0.6rem 0.4rem;
     }
 }
 
-/* さらに小さい画面用の調整 */
 @media (max-width: 480px) {
-    /* パディングとマージンの微調整 */
-    .container {
-        padding: 0 0.8rem;
+    .info-section {
+        padding: 0.5rem;
     }
 
-    /* フォントサイズの調整 */
-    body {
-        font-size: 0.95rem;
-    }
-
-    h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.3rem; }
-    h4 { font-size: 1.1rem; }
-
-    /* 画像サイズの調整 */
-    .president-image,
-    .principal-image {
-        width: 150px;
-        height: 150px;
-    }
-
-    /* カード型レイアウトの余白調整 */
-    .card {
+    .info-section h2 {
+        margin: -0.5rem -0.5rem 1rem -0.5rem;
         padding: 0.8rem;
-        margin-bottom: 0.8rem;
-    }
-}
-
-/* 創立120周年事業ページのスタイル調整 */
-.anniversary-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-.anniversary-content {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.event-card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.event-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.event-content {
-    padding: 1.5rem;
-}
-
-.event-title {
-    color: var(--primary-color);
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.event-description {
-    color: var(--text-color);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
-.event-details {
-    background: #f8fafc;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-}
-
-.event-info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.info-block {
-    background: white;
-    padding: 1.2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.info-block h4 {
-    color: var(--secondary-color);
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.info-block h4::before {
-    content: '';
-    width: 4px;
-    height: 1em;
-    background: var(--secondary-color);
-    border-radius: 2px;
-}
-
-.timeline {
-    position: relative;
-    padding-left: 2rem;
-    margin: 2rem 0;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--accent-color);
-    border-radius: 1px;
-}
-
-.timeline-item {
-    position: relative;
-    padding-bottom: 1.5rem;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -2rem;
-    top: 0.5rem;
-    width: 1rem;
-    height: 1rem;
-    background: var(--primary-color);
-    border-radius: 50%;
-    border: 2px solid white;
-}
-
-.timeline-time {
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 0.3rem;
-}
-
-.photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.gallery-item {
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-}
-
-.gallery-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover .gallery-image {
-    transform: scale(1.05);
-}
-
-.gallery-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
-    color: white;
-    font-size: 0.9rem;
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 1024px) {
-    .anniversary-section {
-        padding: 1.5rem;
-    }
-
-    .event-info-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .anniversary-section {
-        padding: 1rem;
-    }
-
-    .anniversary-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .event-card {
-        max-width: 100%;
-    }
-
-    .event-title {
         font-size: 1.2rem;
     }
 
-    .event-image {
-        height: 180px;
+    .chart-section,
+    .table-section {
+        padding: 0.5rem;
     }
 
-    .info-block {
-        padding: 1rem;
+    .chart-container {
+        padding: 0.3rem;
     }
 
-    .photo-gallery {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .anniversary-section {
-        padding: 0.8rem;
+    .chart-legend {
+        padding: 0.5rem;
+        gap: 0.3rem;
     }
 
-    .event-content {
-        padding: 1.2rem;
-    }
-
-    .event-image {
-        height: 160px;
-    }
-
-    .event-title {
-        font-size: 1.1rem;
-    }
-
-    .info-block h4 {
-        font-size: 1rem;
-    }
-
-    .timeline {
-        padding-left: 1.5rem;
-    }
-
-    .timeline-item::before {
-        left: -1.5rem;
-        width: 0.8rem;
-        height: 0.8rem;
-    }
-
-    .photo-gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-caption {
-        padding: 0.8rem;
+    .legend-item {
+        padding: 0.3rem;
         font-size: 0.85rem;
     }
+
+    .career-table th,
+    .career-table td,
+    .univ-table th,
+    .univ-table td {
+        padding: 0.5rem 0.3rem;
+        font-size: 0.9rem;
+    }
 }
 
-/* タッチデバイス対応 */
+/* タッチデバイスの操作性向上 */
 @media (hover: none) {
-    .event-card {
-        transform: none !important;
+    .career-table td,
+    .univ-table td {
+        padding: 0.8rem 0.4rem;
     }
 
-    .gallery-item {
-        cursor: pointer;
+    .table-container {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        overflow-x: auto;
     }
 
-    .gallery-caption {
-        padding: 0.8rem;
+    /* タップ時のハイライト */
+    .career-table tr:active,
+    .univ-table tr:active {
+        background-color: rgba(59, 130, 246, 0.1);
     }
 }
 
 /* セーフエリア対応 */
-@supports (padding: env(safe-area-inset-left)) {
-    .anniversary-section {
-        padding-left: calc(1rem + env(safe-area-inset-left));
-        padding-right: calc(1rem + env(safe-area-inset-right));
+@supports (padding: env(safe-area-inset-top)) {
+    @media (max-width: 768px) {
+        .student-info {
+            padding-left: env(safe-area-inset-left);
+            padding-right: env(safe-area-inset-right);
+        }
+
+        .info-section {
+            margin-left: -env(safe-area-inset-left);
+            margin-right: -env(safe-area-inset-right);
+            width: calc(100% + env(safe-area-inset-left) + env(safe-area-inset-right));
+        }
     }
 }
 
@@ -1997,27 +1616,25 @@ body.menu-open {
 /* テーブル本体の最適化 */
 .statistics-table {
     width: 100%;
-    border-collapse: collapse; /* 罫線を重ねて表示 */
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    margin: 1rem 0;
 }
 
 /* ヘッダー行のデザイン */
-.statistics-table thead tr {
-    background: linear-gradient(to right, #1e3a8a, #2563eb);
+.statistics-table thead {
+    background: var(--primary-color);
+    color: white;
 }
 
 /* ヘッダーセル */
 .statistics-table th {
-    color: white;
-    font-weight: 600;
-    padding: 1rem; /* パディングを均一に */
+    padding: 1rem;
     text-align: center;
-    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    font-size: 1rem;
+    border-bottom: 3px solid #ddd;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
 /* 各列の色分け */
@@ -2046,10 +1663,10 @@ body.menu-open {
 
 /* データセル */
 .statistics-table td {
-    padding: 1rem; /* パディングを均一に */
+    padding: 1rem;
     text-align: center;
-    border-bottom: 1px solid #e2e8f0; /* 各行の下に罫線を追加 */
-    border-right: 1px solid #e2e8f0; /* 各列の右に罫線を追加 */
+    border-bottom: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
     font-size: 1rem;
     transition: background-color 0.2s ease;
 }
@@ -2132,5 +1749,382 @@ body.menu-open {
     background: #f8fafc;
     border-radius: 8px;
     border-left: 4px solid #3b82f6;
+}
+
+.table-section {
+    margin: 2rem 0;
+    background: white;
+    padding: 2rem;
+    border-radius: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.career-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    margin: 1rem 0;
+}
+
+.career-table thead {
+    background: var(--primary-color);
+    color: white;
+}
+
+.career-table th {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #ddd;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.career-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.career-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.career-table tr:hover {
+    background-color: #f0f4ff;
+}
+
+/* 国公立大学の数値を青色で強調 */
+.career-table td:nth-child(2) {
+    color: #2b6cb0;
+    font-weight: bold;
+}
+
+/* 私立大学の数値を紫色で強調 */
+.career-table td:nth-child(3) {
+    color: #6b46c1;
+    font-weight: bold;
+}
+
+/* 合計を緑色で強調 */
+.career-table td:nth-child(4) {
+    color: #2f855a;
+    font-weight: bold;
+    background-color: #f0fff4;
+}
+
+/* 卒業年度を強調 */
+.career-table td:first-child {
+    font-weight: bold;
+    background-color: #f8f9fa;
+    border-right: 2px solid #ddd;
+}
+
+/* カッコ内の数字のスタイル */
+.career-table td span.sub-number {
+    font-size: 0.9em;
+    color: #666;
+    margin-left: 0.3em;
+}
+
+@media (max-width: 768px) {
+    .table-section {
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    
+    .career-table {
+        font-size: 0.9rem;
+    }
+    
+    .career-table th,
+    .career-table td {
+        padding: 0.75rem 0.5rem;
+    }
+}
+
+/* 難関・主要大学合格者数テーブル */
+.university-tables {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.national-univ,
+.private-univ {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+}
+
+.national-univ h4,
+.private-univ h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 2;
+    padding-top: 0.5rem;
+}
+
+.univ-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0;
+}
+
+.univ-table thead {
+    background: var(--primary-color);
+    color: white;
+    position: sticky;
+    top: 3.8rem;
+    z-index: 2;
+}
+
+.univ-table th {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #ddd;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.univ-table td {
+    padding: 0.8rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+/* 大学名のセル */
+.univ-table td:first-child {
+    text-align: left;
+    font-weight: bold;
+    background-color: #f8f9fa;
+    border-right: 2px solid #ddd;
+    position: sticky;
+    left: 0;
+}
+
+/* 国公立大学テーブルの数値セル */
+.national-univ .univ-table td:not(:first-child) {
+    color: #2b6cb0;
+    font-weight: 500;
+}
+
+/* 私立大学テーブルの数値セル */
+.private-univ .univ-table td:not(:first-child) {
+    color: #6b46c1;
+    font-weight: 500;
+}
+
+/* カッコ内の数字（現役合格者数）のスタイル */
+.univ-table td span.sub-number {
+    font-size: 0.9em;
+    color: #666;
+    margin-left: 0.3em;
+}
+
+/* 偶数行の背景色 */
+.univ-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* ホバー効果 */
+.univ-table tr:hover td {
+    background-color: #f0f4ff;
+}
+
+.univ-table tr:hover td:first-child {
+    background-color: #e8eaed;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+    .university-tables {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .national-univ,
+    .private-univ {
+        width: 100%;
+    }
+
+    .univ-table thead {
+        top: 3.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .university-tables {
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .national-univ,
+    .private-univ {
+        padding: 1rem;
+    }
+
+    .national-univ h4,
+    .private-univ h4 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        padding-top: 0.3rem;
+    }
+
+    .univ-table th,
+    .univ-table td {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+
+    .univ-table thead {
+        top: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .anniversary-page {
+        padding: 0;
+    }
+
+    .anniversary-content {
+        padding: 1rem;
+        border-radius: 0;
+    }
+
+    .ceremony-schedule {
+        margin-bottom: 2rem;
+    }
+
+    .timeline-item {
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .ceremony-photos {
+        margin-top: 2rem;
+    }
+
+    .photo-grid {
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .sdgs-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .karuta-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .clear-file-images {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .anniversary-content {
+        padding: 0.5rem;
+    }
+
+    .ceremony-schedule {
+        margin-bottom: 1.5rem;
+    }
+
+    .timeline-item {
+        padding: 0.6rem;
+    }
+
+    .photo-grid figure {
+        margin: 0;
+    }
+
+    .photo-grid figcaption {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .sdgs-book,
+    .sdgs-karuta,
+    .clear-file {
+        margin-top: 2rem;
+        padding-top: 1rem;
+    }
+
+    .karuta-description,
+    .clear-file-description {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    .clear-file-front,
+    .clear-file-back {
+        padding: 1rem;
+    }
+}
+
+/* 写真サイズの統一 */
+.ceremony-photo,
+.council-photo img,
+.hall-image img,
+.sdgs-character,
+.sdgs-preview,
+.karuta-image,
+.clear-file-image,
+.main-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.photo-grid figure,
+.hero {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+}
+
+/* スマートフォン向けの調整 */
+@media (max-width: 768px) {
+    .ceremony-photo,
+    .council-photo img,
+    .hall-image img,
+    .sdgs-character,
+    .sdgs-preview,
+    .karuta-image,
+    .clear-file-image,
+    .main-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ceremony-photo,
+    .council-photo img,
+    .hall-image img,
+    .sdgs-character,
+    .sdgs-preview,
+    .karuta-image,
+    .clear-file-image,
+    .main-image {
+        height: 200px;
+    }
 }
 
