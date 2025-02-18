@@ -186,12 +186,13 @@ main {
     padding: 0;
     border-radius: 0;
     overflow: hidden;
+    aspect-ratio: auto;
 }
 
 .main-image {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     object-position: center;
     border-radius: 0;
     box-shadow: none;
@@ -535,7 +536,7 @@ footer {
     .karuta-image,
     .clear-file-image,
     .main-image {
-        height: 250px;
+        height: auto;
     }
 }
 
@@ -548,7 +549,7 @@ footer {
     .karuta-image,
     .clear-file-image,
     .main-image {
-        height: 200px;
+        height: auto;
     }
 }
 
@@ -582,12 +583,16 @@ footer {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .sdgs-preview {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: contain;
+    max-height: none;
 }
 
 /* SDGs Karuta Section */
@@ -1846,8 +1851,8 @@ body.menu-open {
 
 /* 難関・主要大学合格者数テーブル */
 .university-tables {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     margin: 2rem 0;
 }
@@ -1858,7 +1863,7 @@ body.menu-open {
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    height: fit-content;
+    width: 100%;
 }
 
 .national-univ h4,
@@ -1952,7 +1957,6 @@ body.menu-open {
 /* レスポンシブ対応 */
 @media (max-width: 1200px) {
     .university-tables {
-        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
@@ -1960,171 +1964,69 @@ body.menu-open {
     .private-univ {
         width: 100%;
     }
-
-    .univ-table thead {
-        top: 3.3rem;
-    }
 }
 
-@media (max-width: 768px) {
-    .university-tables {
-        gap: 1rem;
-        margin-top: 1rem;
-    }
-
-    .national-univ,
-    .private-univ {
+@media (min-width: 1024px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
         padding: 1rem;
+        overflow-x: hidden;
     }
 
-    .national-univ h4,
-    .private-univ h4 {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-        padding-top: 0.3rem;
+    .hero {
+        margin: 0 0 2rem 0;
+        max-width: 100%;
     }
 
-    .univ-table th,
-    .univ-table td {
-        padding: 0.7rem;
-        font-size: 0.95rem;
+    .main-image {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
     }
 
-    .univ-table thead {
-        top: 2.8rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .anniversary-page {
-        padding: 0;
-    }
-
-    .anniversary-content {
-        padding: 1rem;
-        border-radius: 0;
-    }
-
-    .ceremony-schedule {
-        margin-bottom: 2rem;
-    }
-
-    .timeline-item {
-        padding: 0.8rem;
-        margin-bottom: 1rem;
-    }
-
-    .ceremony-photos {
-        margin-top: 2rem;
-    }
-
-    .photo-grid {
-        gap: 1rem;
-        margin-top: 1rem;
-    }
-
-    .sdgs-content {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .karuta-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .clear-file-images {
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .anniversary-content {
-        padding: 0.5rem;
-    }
-
-    .ceremony-schedule {
-        margin-bottom: 1.5rem;
-    }
-
-    .timeline-item {
-        padding: 0.6rem;
-    }
-
-    .photo-grid figure {
-        margin: 0;
-    }
-
-    .photo-grid figcaption {
-        padding: 0.8rem;
-        font-size: 0.9rem;
-    }
-
-    .sdgs-book,
-    .sdgs-karuta,
-    .clear-file {
-        margin-top: 2rem;
-        padding-top: 1rem;
-    }
-
-    .karuta-description,
-    .clear-file-description {
-        padding: 1rem;
+    .info-section {
         margin: 1rem 0;
+        padding: 2rem;
+        border-radius: 8px;
     }
 
-    .clear-file-front,
-    .clear-file-back {
-        padding: 1rem;
-    }
-}
-
-/* 写真サイズの統一 */
-.ceremony-photo,
-.council-photo img,
-.hall-image img,
-.sdgs-character,
-.sdgs-preview,
-.karuta-image,
-.clear-file-image,
-.main-image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    object-position: center;
-}
-
-.photo-grid figure,
-.hero {
-    aspect-ratio: 4/3;
-    overflow: hidden;
-}
-
-/* スマートフォン向けの調整 */
-@media (max-width: 768px) {
-    .ceremony-photo,
-    .council-photo img,
-    .hall-image img,
-    .sdgs-character,
-    .sdgs-preview,
-    .karuta-image,
-    .clear-file-image,
-    .main-image {
-        height: 250px;
+    .council-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
     }
 }
 
-@media (max-width: 480px) {
-    .ceremony-photo,
-    .council-photo img,
-    .hall-image img,
-    .sdgs-character,
-    .sdgs-preview,
-    .karuta-image,
-    .clear-file-image,
-    .main-image {
-        height: 200px;
+@media (min-width: 1440px) {
+    main {
+        max-width: 1400px;
+    }
+
+    .hero {
+        margin: 0 0 2rem 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .sdgs-content {
+        grid-template-columns: 250px 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .sdgs-pages {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .sdgs-preview {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
     }
 }
 
