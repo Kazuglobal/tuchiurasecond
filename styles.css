@@ -453,23 +453,26 @@ footer {
 .photo-grid figure {
     margin: 0;
     background: white;
+    padding: 1rem;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    aspect-ratio: 4/3;
 }
 
 .ceremony-photo {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     object-position: center;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
 }
 
 .photo-grid figcaption {
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
     color: #666;
+    font-size: 0.9rem;
 }
 
 .mascot-section {
@@ -536,7 +539,61 @@ footer {
     .karuta-image,
     .clear-file-image,
     .main-image {
+        width: 100%;
         height: auto;
+        max-height: none;
+        object-fit: contain;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 0;
+    }
+
+    .photo-grid figure {
+        padding: 0;
+        margin: 0;
+        background: white;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .karuta-grid {
+        gap: 0.5rem;
+        margin: 0;
+    }
+
+    .karuta-set {
+        padding: 0;
+        margin: 0;
+        background: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .sdgs-pages {
+        padding: 0;
+        margin: 0;
+        background: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .sdgs-content {
+        gap: 1rem;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    .anniversary-content {
+        padding: 0;
+        background: none;
+        box-shadow: none;
     }
 }
 
@@ -549,7 +606,28 @@ footer {
     .karuta-image,
     .clear-file-image,
     .main-image {
+        width: 100%;
         height: auto;
+        max-height: none;
+        object-fit: contain;
+        margin: 0;
+    }
+
+    .photo-grid {
+        padding: 0;
+    }
+
+    .photo-grid figure {
+        padding: 0;
+        margin: 0;
+    }
+
+    .karuta-grid {
+        gap: 0.3rem;
+    }
+
+    .karuta-set {
+        padding: 0;
     }
 }
 
