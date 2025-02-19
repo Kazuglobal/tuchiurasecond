@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             try {
-                const response = await fetch('http://localhost:3000/api/address-change', {
+                const response = await fetch('/api/address-change', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             try {
-                const response = await fetch('http://localhost:3000/api/deceased-info', {
+                const response = await fetch('/api/deceased-info', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
