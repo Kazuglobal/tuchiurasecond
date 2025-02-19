@@ -6,19 +6,19 @@
       "use": "@vercel/node"
     },
     {
-      "src": "*.html",
+      "src": "**/*.html",
       "use": "@vercel/static"
     },
     {
-      "src": "*.css",
+      "src": "**/*.css",
       "use": "@vercel/static"
     },
     {
-      "src": "*.js",
+      "src": "**/*.js",
       "use": "@vercel/static"
     },
     {
-      "src": "images/*",
+      "src": "images/**",
       "use": "@vercel/static"
     }
   ],
@@ -26,6 +26,10 @@
     {
       "src": "/api/(.*)",
       "dest": "/server.js"
+    },
+    {
+      "src": "/address-change",
+      "dest": "/address-change.html"
     },
     {
       "handle": "filesystem"
