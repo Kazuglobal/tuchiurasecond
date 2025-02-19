@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>住所変更・物故者情報 - 土浦第二高等学校</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <button class="menu-toggle" aria-label="メニュー">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="header-top">
+                <span class="date">2025年4月1日</span>
+                <h1>Shokei News</h1>
+                <span class="issue">第12号</span>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">トップページ</a></li>
+                <li><a href="message.html">会長ごあいさつ</a></li>
+                <li><a href="principal.html">校長ごあいさつ</a></li>
+                <li><a href="anniversary.html">創立120周年記念事業</a></li>
+                <li><a href="club.html">部活動紹介</a></li>
+                <li><a href="student-info.html">生徒会・進路情報</a></li>
+                <li><a href="current.html">土浦二高のいま</a></li>
+                <li><a href="address-change.html" class="active">住所変更・物故者情報</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article class="form-page">
+            <section class="info-section">
+                <h2>住所変更・物故者情報</h2>
+                
+                <div class="form-section">
+                    <div class="form-container">
+                        <h3>住所変更フォーム</h3>
+                        <form id="address-change-form" action="#" method="POST">
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="name">名前</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="graduation-year">卒業年</label>
+                                    <div class="year-select">
+                                        <select id="era" name="era" required>
+                                            <option value="昭和">昭和</option>
+                                            <option value="平成">平成</option>
+                                            <option value="令和">令和</option>
+                                        </select>
+                                        <input type="number" id="graduation-year" name="graduation-year" min="1" max="99" required>
+                                        <span>年</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="old-address">旧住所</label>
+                                <input type="text" id="old-address" name="old-address" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="new-address">新住所</label>
+                                <input type="text" id="new-address" name="new-address" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="change-date">変更日</label>
+                                <input type="date" id="change-date" name="change-date" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="remarks">備考 <span class="optional">(任意)</span></label>
+                                <textarea id="remarks" name="remarks"></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-button">送信</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-container">
+                        <h3>物故者情報フォーム</h3>
+                        <form id="deceased-info-form" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="deceased-name">故人の名前</label>
+                                <input type="text" id="deceased-name" name="deceased-name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="death-date">没年月日</label>
+                                <input type="date" id="death-date" name="death-date" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="notifier-name">通知者の名前</label>
+                                    <input type="text" id="notifier-name" name="notifier-name" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="relationship">続柄</label>
+                                    <input type="text" id="relationship" name="relationship" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact">連絡先</label>
+                                <input type="tel" id="contact" name="contact" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">メッセージ <span class="optional">(任意)</span></label>
+                                <textarea id="message" name="message"></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-button">送信</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Shokei News. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 

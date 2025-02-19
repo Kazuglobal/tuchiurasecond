@@ -210,3 +210,84 @@ window.addEventListener('resize', debounce(() => {
         }
     });
 }, 250));
+
+// フォーム送信処理
+document.addEventListener('DOMContentLoaded', function() {
+    const addressForm = document.getElementById('address-change-form');
+    const deceasedForm = document.getElementById('deceased-info-form');
+
+    if (addressForm) {
+        addressForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                era: document.getElementById('era').value,
+                graduationYear: document.getElementById('graduation-year').value,
+                oldAddress: document.getElementById('old-address').value,
+                newAddress: document.getElementById('new-address').value,
+                changeDate: document.getElementById('change-date').value,
+                remarks: document.getElementById('remarks').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/api/address-change', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert('住所変更が正常に登録されました');
+                    addressForm.reset();
+                } else {
+                    alert('エラーが発生しました: ' + data.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('送信中にエラーが発生しました');
+            }
+        });
+    }
+
+    if (deceasedForm) {
+        deceasedForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                deceasedName: document.getElementById('deceased-name').value,
+                deathDate: document.getElementById('death-date').value,
+                notifierName: document.getElementById('notifier-name').value,
+                relationship: document.getElementById('relationship').value,
+                contact: document.getElementById('contact').value,
+                message: document.getElementById('message').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/api/deceased-info', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert('物故者情報が正常に登録されました');
+                    deceasedForm.reset();
+                } else {
+                    alert('エラーが発生しました: ' + data.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('送信中にエラーが発生しました');
+            }
+        });
+    }
+});
